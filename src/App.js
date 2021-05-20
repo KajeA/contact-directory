@@ -1,34 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { CardList } from "./components/card-list/card-list.component";
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      contacts: [
-        {
-          name: 'Name One',
-          id: 'id1'
-        },
-        {
-          name: 'Name Two',
-          id: 'id2'
-        },
-        {
-          name: 'Name Three',
-          id: 'id3'
-        },
-      ]
+      contacts: []
     };
+  }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then( users => this.setState({ contacts: users }));
   }
 
   render() {
     return (
       <div className="App">
-        {
-          this.state.contacts.map(contact => <h1 key={contact.id}> { contact.name } </h1>)
-        }
+        <CardList contacts={this.state.contacts} />
       </div>
     );
   }
