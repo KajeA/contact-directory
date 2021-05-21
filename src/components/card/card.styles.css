@@ -1,7 +1,8 @@
 .card-container {
   display: flex;
   flex-direction: column;
-  background-color: #a0a1a1;
+  background-color: #92a5a5;
+  opacity: .7;
   border: solid 1px #0c0c0a;
   border-radius: 7px;
   padding: 1rem;
@@ -19,4 +20,18 @@
 .card-image {
   border-radius: 50%;
   border: solid 1px #747471;
+}
+
+.horilines {
+  background-color: #747471;
+  border: 0;
+  width: 96%;
+  height: 1px;
+}
+
+.horilines2 {
+  background-color: #929290;
+  border: 0;
+  width: 65%;
+  height: 1px;
 }
